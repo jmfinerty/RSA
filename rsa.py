@@ -24,6 +24,7 @@ def MakeKeys():
 def EncryptMessage():
     msg = int(open("message", 'r').read())
     n, e = open("public_key", 'r').readlines()
+    n = int(n); e = int(e)
     ciphertext = ModExp(msg, e, n)
     open("ciphertext", 'w').write(str(ciphertext))
 
